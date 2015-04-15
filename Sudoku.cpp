@@ -91,7 +91,7 @@ void Sudoku::Solve(){
 	      nextB[i]= (i/3)*9+ (i%3) ;                
      }
 
-         
+     
+     
      
 }
-
