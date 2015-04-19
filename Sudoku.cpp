@@ -45,24 +45,14 @@ void Sudoku::GiveQuestion(void){
         cout<<endl;
      }
      cout<<endl;
-}
-/*give question*/
+} /*give question*/
 
 void Sudoku::ReadIn(void)
 {
-	for (int i=0; i<144; i++) {
-         cin>>a[i];
+	for(int i=0; i<144; i++) {
+         cin>>sdku.sudokuAr1[i];
 	}
 } /*read in*/
-
-union Sudoku::UnionSudoku{
-    int sudokuAr1[144];
-    int sudokuAr2[12][12];       
-} 
-sdku; 
-int sdkqs[5][144];                 
-int tempNum[144] ;                               
-int tempSp;                                
 
 void Sudoku::push(int sp){
 	   tempNum[tempSp++]= sp; /*把處理過的位置存進去*/
@@ -180,15 +170,11 @@ void Sudoku::Solve(void){
      int solutiontemp[144];
      int questiontemp[144];
       
-      for (a=0; a<144; a++){
-          cin>>sdku.sudokuAr1[a];
-     }        
-          
      for (a=0; a<12; a++){
          for (b=0; b<12; b++){     
             if (QuestionPreCheckNG(sdku.sudokuAr2, a,b))  {                                  
                cout<<"0"<<endl;            /*無解 離開*/
-               return 0;
+               return;
             }
          }
      }
@@ -226,10 +212,7 @@ void Sudoku::Solve(void){
              }
          }
      } 
-     else cout << SolutionCount;       
+     else cout<<SolutionCount<<endl;       
    
-     return 0;
+     /*return 0;*/
 }
-
-
-
